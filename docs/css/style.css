@@ -19,6 +19,10 @@ fish {
     cursor: pointer;
 }
 
+.dead {
+    background-image: url(../images/bones.png);
+}
+
 bubble {
     background-image: url(../images/bubble.png);
     width:55px; height: 55px;
@@ -31,6 +35,3 @@ background {
     background-size: cover;
 }
 
-.dead {
-    background-image: url(../images/bones.png);
-}

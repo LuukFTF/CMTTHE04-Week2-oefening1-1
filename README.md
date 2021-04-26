@@ -22,6 +22,10 @@ Pixel Aquarium Typescript
 
 - Open de oefening van week 1
 - Verplaats de code die één Vis en één Bubble tekent naar de juiste plek in dit project
+- maak in game.ts een nieuw vis aan
+```
+let fish : Fish = new Fish()
+```
 - De vis heeft een random kleur en positie
 - De bubble heeft een random positie
 
