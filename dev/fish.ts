@@ -1,14 +1,6 @@
-class Fish {
-
-    div: HTMLElement
+export class Fish {
     
     constructor() {
         console.log("Fish was created!")
-
-        this.killFish()
-    }
-
-    killFish(){
-        console.log("Aargh!")
     }
 }

@@ -2,13 +2,21 @@
 
 Pixel Aquarium Typescript
 
+<br>
+<br>
+<br>
+
 ## Voorbereiding
 
-- Installeer Visual Studio Code en Typescript (lees de quickstart guide)
+- [Installeer Visual Studio Code en Typescript](https://github.com/HR-CMGT/Typescript#werkomgeving)
 - Bekijk de bestanden van dit project
 - Druk op CMD + SHIFT + B en kies voor `watch mode`
-- Kijk of de `main.js` file in de `docs/js` map is aangemaakt.
-- Open `index.html` via localhost
+- Kijk of de `.js` files in de `docs/js` map zijn aangemaakt.
+- Open `index.html` via localhost. Tip: gebruik [live-server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+
+<br>
+<br>
+<br>
 
 ## Opdracht
 
@@ -17,33 +25,39 @@ Pixel Aquarium Typescript
 - De vis heeft een random kleur en positie
 - De bubble heeft een random positie
 
-## Opdracht
+<br>
+<br>
+<br>
 
-- Voeg een nieuw zelfbedacht element toe aan het aquarium. Maak een nieuwe class file en zorg dat je nieuwe element in `game.ts` wordt toegevoegd aan de game.
+## Event Listeners
+
+Je kan binnen een class werken met `addEventListener`. Om de juiste functie aan te roepen gebuik je de arrow notatie: `() => this.doSomething()`
+
+In dit voorbeeld zie je dat `div` een `property` (eigenschap) is van de `Car` class. Het type is `HTMLElement`. Dit type kan je altijd makkelijk vinden door met de muis over de variabele `this.div` te bewegen.
+
+```typescript
+class Car {
+    
+    div:HTMLElement
+
+    constructor() {
+        this.div = document.createElement("car")
+        document.body.appendChild(this.div)
+        this.div.addEventListener("click", () => this.drive())
+    }
+
+    drive() {
+        console.log("VROOOM 🚗💨")
+    }
+}
+```
+
+<br>
+<br>
+<br>
 
 ## Opdracht
 
 - Geef de vis een click handler die op zijn element de CSS class "dead" toevoegt. Dit kan je doen met `element.classList.add("dead")`
 - Geef de bubble een click handler die het html element weghaalt. Dit kan je doen met `element.remove()`
-
-# Code voorbeeld
-
-In deze class maken we het HTML element een property van de class. Dit is handig omdat we dan later via `this.div` het element weer kunnen gebruiken. Ook zie je hoe je een click handler kan gebruiken in een class.
-
-```
-class Fish {
-
-    div: HTMLElement
-    
-    constructor() {
-        this.div = document.createElement("fish")
-        document.body.appendChild(this.div)
-        
-        this.div.addEventListener("click", () => this.killFish())
-    }
-
-    killFish(){
-        console.log(this.div)
-    }
-}
-```
+- Kan je ook een "plop" geluidje afspelen als de bubble wordt verwijderd?

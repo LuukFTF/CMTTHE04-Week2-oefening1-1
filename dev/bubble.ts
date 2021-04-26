@@ -1,14 +1,6 @@
-class Bubble {
-
-    div:HTMLElement
+export class Bubble {
 
     constructor() {
         console.log("Blub... blub...")
-
-        this.popBubble()
-    }
-
-    popBubble() {
-        console.log("Plop!")
     }
 }
