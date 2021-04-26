@@ -9,8 +9,7 @@ Pixel Aquarium Typescript
 ## Voorbereiding
 
 - [Installeer Visual Studio Code en Typescript](https://github.com/HR-CMGT/Typescript#werkomgeving)
-- Bekijk de bestanden van dit project
-- Druk op CMD + SHIFT + B en kies voor `watch mode`
+- Download de code uit deze oefening. Druk op CMD + SHIFT + B en kies voor `watch mode`.
 - Kijk of de `.js` files in de `docs/js` map zijn aangemaakt.
 - Open `index.html` via localhost. Tip: gebruik [live-server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
