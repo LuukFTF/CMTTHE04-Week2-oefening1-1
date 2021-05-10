@@ -1,6 +1,8 @@
 # CMTTHE04 Week 2
 
-Pixel Aquarium Typescript
+- Werken met Typescript
+- Compileren project van DEV naar DOCS
+- Werken met Classes
 
 <br>
 <br>
@@ -19,13 +21,15 @@ Pixel Aquarium Typescript
 
 ## Opdracht
 
-- Open de oefening van week 1
-- Verplaats de code die één Vis en één Bubble tekent naar de juiste plek in dit project
-- maak in game.ts een nieuw vis aan
+- We gebruiken de [finished code van week 1](https://github.com/HR-CMGT/CMTTHE04-Week1-oefening1-completed) als uitgangspunt. We gaan dit nabouwen met behulp van Classes. 
+- Verplaats de code die één Fish en één Bubble tekent naar de classes `fish.ts` en `bubble.ts`
+- De code van de oude `createFish` en `createBubble` functies plaats je nu in de `constructor` van die classes.
+- Nu kan je in `game.ts` een fish en een bubble aanmaken met:
 ```
-let fish : Fish = new Fish()
+let fish = new Fish()
+let bubble = new Bubble()
 ```
-- De vis heeft een random kleur en positie
+- De fish heeft nog steeds een random kleur en positie
 - De bubble heeft een random positie
 
 <br>
@@ -34,23 +38,40 @@ let fish : Fish = new Fish()
 
 ## Event Listeners
 
-Je kan binnen een class werken met `addEventListener`. Om de juiste functie aan te roepen gebuik je de arrow notatie: `() => this.doSomething()`
-
-In dit voorbeeld zie je dat `div` een `property` (eigenschap) is van de `Car` class. Het type is `HTMLElement`. Dit type kan je altijd makkelijk vinden door met de muis over de variabele `this.div` te bewegen.
+Je kan binnen een class werken met `addEventListener`. Om de juiste functie aan te roepen gebuik je de **arrow notatie** en het keyword **this**: `() => this.doSomething()`. In dit voorbeeld zie je dat de `fish` zijn `killFish` functie aanroept na een click:
 
 ```typescript
-class Car {
+class Fish {
+    
+    constructor() {
+        let element = document.createElement("fish")
+        document.body.appendChild(element)
+        element.addEventListener("click", () => this.killFish())
+    }
+
+    killFish() {
+        console.log("This fish is dead 🐠💀")
+    }
+}
+```
+
+## Properties
+
+We willen vanuit de `killFish` functie het HTML element aanpassen dat we in de constructor hebben aangemaakt. Om daar nog bij te kunnen maken we het HTML Element  een `property` van de `fish` class. Het datatype van deze property is `HTMLElement`. *Dit type kan je altijd makkelijk vinden door met de muis over de variabele te bewegen.*
+
+```typescript
+class Fish {
     
     div:HTMLElement
 
     constructor() {
-        this.div = document.createElement("car")
+        this.div = document.createElement("fish")
         document.body.appendChild(this.div)
-        this.div.addEventListener("click", () => this.drive())
+        this.div.addEventListener("click", () => this.killFish())
     }
 
-    drive() {
-        console.log("VROOOM 🚗💨")
+    killFish() {
+        this.div.classList.add("dead")
     }
 }
 ```
@@ -61,6 +82,5 @@ class Car {
 
 ## Opdracht
 
-- Geef de vis een click handler die op zijn element de CSS class "dead" toevoegt. Dit kan je doen met `element.classList.add("dead")`
 - Geef de bubble een click handler die het html element weghaalt. Dit kan je doen met `element.remove()`
-- Kan je ook een "plop" geluidje afspelen als de bubble wordt verwijderd?
+- Speel het "plop" geluidje als de bubble wordt verwijderd
