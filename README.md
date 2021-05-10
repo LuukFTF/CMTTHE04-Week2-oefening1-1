@@ -24,13 +24,15 @@
 - We gebruiken de [finished code van week 1](https://github.com/HR-CMGT/CMTTHE04-Week1-oefening1-completed) als uitgangspunt. We gaan dit nabouwen met behulp van Classes. 
 - Verplaats de code die één Fish en één Bubble tekent naar de classes `fish.ts` en `bubble.ts`
 - De code van de oude `createFish` en `createBubble` functies plaats je nu in de `constructor` van die classes.
+- De event listeners laten we nog even weg.
 - Nu kan je in `game.ts` een fish en een bubble aanmaken met:
 ```
 let fish = new Fish()
 let bubble = new Bubble()
 ```
-- De fish heeft nog steeds een random kleur en positie
-- De bubble heeft een random positie
+- Maak 30 fishes en bubbles.
+- De fish heeft nog steeds een random kleur en positie.
+- De bubble heeft een random positie.
 
 <br>
 <br>
